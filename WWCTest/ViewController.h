@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (int)getNum;
 
 @end
 

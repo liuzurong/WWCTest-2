@@ -37,4 +37,22 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
+- (void)testUI {
+         
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *button = app.buttons[@"\u524d\u8fdb"];
+    [button tap];
+    [app.buttons[@"back"] tap];
+    
+    XCUIElement *backButton = [[[app.navigationBars[@"UIView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0];
+    [backButton tap];
+    [button tap];
+    [backButton tap];
+    [button tap];
+    [backButton tap];
+    
+    
+}
+
+
 @end
